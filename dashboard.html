@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Investor Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Major+Mono+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <main class="trade-card">
+      <header class="trade-header">
+        <div>
+          <p class="eyebrow">Investor Dashboard</p>
+          <p class="name" id="profileName"></p>
+        </div>
+        <div class="profile-stats">
+          <p class="sub">Balance</p>
+          <p class="balance" id="balanceValue"></p>
+          <span class="bonus" id="bonusValue"></span>
+          <button class="ghost logout" id="logoutBtn">Log out</button>
+        </div>
+      </header>
+
+      <section class="trade-graph">
+        <p class="trade-label">FX · NAIRA / 3XCOIN-Index</p>
+        <p class="trade-value" id="tradeValue"></p>
+        <svg viewBox="0 0 620 220" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00ffb3" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#00ffd5" stop-opacity="0.5" />
+            </linearGradient>
+          </defs>
+          <path d="M0 150 C120 140 210 110 320 130 C430 150 510 100 620 90" stroke="url(#glow)" />
+        </svg>
+      </section>
+
+      <footer class="trade-footer">
+        <div class="equity">
+          <p class="label">Equity</p>
+          <p class="value" id="equityValue"></p>
+          <p class="muted">Deposit required</p>
+        </div>
+        <div class="withdrawal">
+          <p class="label">Withdrawal account</p>
+          <p class="value" id="withdrawalAccount"></p>
+        </div>
+        <div class="address" id="officeAddress">
+          <p>Suite Building No. A203</p>
+          <p>Aguyi Ironsi Street, Maitama</p>
+          <p>Abuja, Nigeria</p>
+        </div>
+      </footer>
+
+      <section class="quick-actions">
+        <h3>Quick actions</h3>
+        <div class="action-grid">
+          <button data-action="withdrawal" data-icon="💸">Withdrawal</button>
+          <button data-action="profile" data-icon="📞">Profile Manager</button>
+          <button data-action="reward" data-icon="🎁">Available Reward</button>
+        </div>
+        <div class="action-message" id="actionMessage"></div>
+      </section>
+    </main>
+    <script src="profiles.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

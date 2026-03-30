@@ -1,0 +1,121 @@
+:root {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background: #050b10;
+  color: #e1fff4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #060c13, #020509 65%);
+  display: grid;
+  place-items: center;
+}
+
+.login-wrapper {
+  width: min(420px, 90vw);
+  padding: 20px;
+}
+
+.login-card {
+  background: rgba(3, 10, 16, 0.95);
+  border: 1px solid rgba(0, 255, 179, 0.2);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.65), inset 0 0 0 1px rgba(0, 255, 179, 0.12);
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: #00e6b2;
+  color: #021010;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(0, 255, 179, 0.6);
+}
+
+h1 {
+  margin: 6px 0 0;
+  font-size: 28px;
+}
+
+.login-form {
+  display: grid;
+  gap: 18px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+input {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+}
+
+input:focus {
+  outline: 1px solid rgba(0, 255, 179, 0.7);
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.primary {
+  background: linear-gradient(90deg, #00ffb4, #00c3ff);
+  color: #021010;
+}
+
+.notification {
+  height: 24px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #b3ffe4;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}

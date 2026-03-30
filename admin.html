@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <main class="admin-wrapper">
+      <section class="admin-card" id="loginPanel">
+        <p class="eyebrow">Admin access</p>
+        <h1>Login</h1>
+        <label>
+          <span>Password</span>
+          <input type="password" id="adminPassword" placeholder="admin123" />
+        </label>
+        <button class="primary" id="adminLogin">Enter</button>
+      </section>
+
+      <section class="admin-card hidden" id="adminPanel">
+        <header class="admin-header">
+          <div>
+            <p class="eyebrow">Profile management</p>
+            <h1>Create/Update user</h1>
+          </div>
+          <button class="ghost" id="logoutBtn">Log out</button>
+        </header>
+
+        <div class="fields-grid">
+          <label>
+            <span>Reg number</span>
+            <input id="regNumber" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input id="password" type="text" />
+          </label>
+          <label>
+            <span>Name</span>
+            <input id="name" />
+          </label>
+          <label>
+            <span>Balance</span>
+            <input id="balance" />
+          </label>
+          <label>
+            <span>Bonus</span>
+            <input id="bonus" />
+          </label>
+          <label>
+            <span>Equity</span>
+            <input id="equity" />
+          </label>
+          <label>
+            <span>Required deposit</span>
+            <input id="requiredDeposit" />
+          </label>
+          <label>
+            <span>Withdrawal account</span>
+            <input id="withdrawalAccount" />
+          </label>
+          <label>
+            <span>Trade value</span>
+            <input id="tradeValue" placeholder="$8,454,096" />
+          </label>
+        </div>
+
+        <div class="actions">
+          <select id="userSelect"></select>
+          <div class="action-buttons">
+            <button class="ghost" id="newUser">New</button>
+            <button class="primary" id="saveUser">Save</button>
+            <button class="ghost" id="deleteUser">Delete</button>
+          </div>
+        </div>
+
+        <div class="admin-footer">
+          <label>
+            <span>Admin password</span>
+            <input type="password" id="newAdminPassword" placeholder="Change password" />
+          </label>
+          <button class="ghost" id="saveAdminPassword">Save</button>
+        </div>
+      </section>
+    </main>
+    <script src="profiles.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

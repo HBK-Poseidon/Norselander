@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Secure Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <main class="login-wrapper">
+      <div class="login-card">
+        <div class="login-brand">
+          <div class="logo">N</div>
+          <div>
+            <p class="eyebrow">Investor portal</p>
+            <h1>Login</h1>
+          </div>
+        </div>
+        <form class="login-form" id="loginForm" novalidate>
+          <label>
+            <span>Reg Number</span>
+            <input type="text" id="loginReg" autocomplete="username" placeholder="NR-001" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" id="loginPassword" autocomplete="current-password" required />
+          </label>
+          <button type="submit" class="primary btn">Login</button>
+          <div class="notification" id="loginNotification"></div>
+        </form>
+      </div>
+    </main>
+    <script src="profiles.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>

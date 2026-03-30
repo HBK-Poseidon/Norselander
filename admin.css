@@ -1,0 +1,132 @@
+:root {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background: #03070b;
+  color: #dffcfa;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f1b2c, #03070b 70%);
+  display: grid;
+  place-items: center;
+}
+
+.admin-wrapper {
+  width: min(900px, 94vw);
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.admin-card {
+  background: rgba(4, 10, 16, 0.95);
+  border-radius: 30px;
+  padding: 28px;
+  border: 1px solid rgba(0, 255, 179, 0.2);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65), inset 0 0 0 1px rgba(0, 255, 179, 0.08);
+}
+
+.admin-card.hidden { display: none; }
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(0, 255, 179, 0.6);
+}
+
+h1 {
+  margin: 8px 0 16px;
+  font-size: 32px;
+}
+
+.login-card label,
+.fields-grid label,
+.admin-footer label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+input,
+select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 1px solid rgba(0, 255, 179, 0.7);
+}
+
+.primary,
+.ghost,
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.primary {
+  background: linear-gradient(90deg, #00ffb3, #00c5ff);
+  color: #021010;
+  font-weight: 600;
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: inherit;
+}
+
+.fields-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .admin-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
