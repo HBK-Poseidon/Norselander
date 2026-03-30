@@ -22,6 +22,10 @@ function showRandomNotification() {
   if (!el) return;
   const text = notifications[Math.floor(Math.random() * notifications.length)];
   el.textContent = text;
+  el.classList.remove('pulse');
+  // trigger reflow so animation restarts
+  void el.offsetWidth;
+  el.classList.add('pulse');
 }
 
 function initNotifications() {
