@@ -1,4 +1,67 @@
-Math.floor(Math.random() * floatingMessages.length)];
+const USER_SESSION_KEY = 'dashboardUserSession';
+
+const floatingMessages = [
+  '+$7,500',
+  '+$12,300',
+  '+€9,800',
+  '-€4,200',
+  '+£15,750',
+  '-£2,600',
+  '+¥1,250,000',
+  '-¥300,000',
+  '+₹850,000',
+  '-₹120,000',
+  '+₦2,450,000',
+  '-₦600,000',
+  '+R1,200,000',
+  '-R450,000',
+  '+C$18,900',
+  '-A$7,300',
+  '+CHF25,000',
+  '-CHF8,400',
+  '+₩9,700,000',
+  '-₩2,100,000',
+  '-$22,400',
+  '+$5,980',
+  '+€14,600',
+  '-€9,750',
+  '+£3,250',
+  '-£18,900',
+  '+¥980,000',
+  '-¥1,450,000',
+  '+₹2,300,000',
+  '-₹540,000',
+  '+₦950,000',
+  '-₦3,200,000',
+  '+R780,000',
+  '-R1,050,000',
+  '+C$42,500',
+  '-C$6,800',
+  '+A$19,200',
+  '-A$11,400',
+  '+CHF7,300',
+  '-CHF21,600',
+  '+₩5,600,000',
+  '-₩890,000',
+];
+
+let floatingTimer;
+
+function loadUsers() {
+  try {
+    DashboardProfiles.ensureUsers();
+    return DashboardProfiles.getUsers();
+  } catch (error) {
+    return [];
+  }
+}
+
+function initFloatingNotifications() {
+  const el = document.getElementById('floatingNotification');
+  if (!el) return;
+
+  function showFloating() {
+    const message = floatingMessages[Math.floor(Math.random() * floatingMessages.length)];
     el.textContent = message;
     el.classList.remove('position-top', 'position-bottom', 'animate');
     void el.offsetWidth;
