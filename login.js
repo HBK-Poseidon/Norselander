@@ -1,36 +1,22 @@
-const USER_SESSION_KEY = 'dashboardUserSession';
-
-const notifications = [
-  'N20,000,000 Withdrawal✅',
-  'N5,000,000 Withdrawal✅',
-  'N800,000 Withdrawal✅',
-  'N12,000,000 Withdrawal✅',
-  'N3,500,000 Withdrawal✅',
-];
-
-function loadUsers() {
-  try {
-    DashboardProfiles.ensureUsers();
-    return DashboardProfiles.getUsers();
-  } catch (error) {
-    return [];
+Math.floor(Math.random() * floatingMessages.length)];
+    el.textContent = message;
+    el.classList.remove('position-top', 'position-bottom', 'animate');
+    void el.offsetWidth;
+    const positionClass = Math.random() > 0.5 ? 'position-top' : 'position-bottom';
+    el.classList.add(positionClass, 'animate');
   }
-}
 
-function showRandomNotification() {
-  const el = document.getElementById('loginNotification');
-  if (!el) return;
-  const text = notifications[Math.floor(Math.random() * notifications.length)];
-  el.textContent = text;
-  el.classList.remove('pulse');
-  // trigger reflow so animation restarts
-  void el.offsetWidth;
-  el.classList.add('pulse');
-}
+  function schedule(nextDelay = 15000) {
+    if (floatingTimer) clearTimeout(floatingTimer);
+    floatingTimer = setTimeout(showFloating, nextDelay);
+  }
 
-function initNotifications() {
-  showRandomNotification();
-  setInterval(showRandomNotification, 3000);
+  el.addEventListener('animationend', () => {
+    el.classList.remove('animate');
+    schedule(15000);
+  });
+
+  schedule(1500);
 }
 
 function initLogin() {
@@ -53,6 +39,6 @@ function initLogin() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNotifications();
+  initFloatingNotifications();
   initLogin();
 });
